@@ -9,6 +9,6 @@ class MainViewModelFactory(val context: Context) : ViewModelProvider.Factory {
         return MainViewModel(context) as T
     }
 
-        
+
 
 }

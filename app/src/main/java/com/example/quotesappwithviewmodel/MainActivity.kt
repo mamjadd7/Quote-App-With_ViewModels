@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 
 class MainActivity : AppCompatActivity() {
@@ -30,10 +31,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onPrevious(view: View) {
-        setQuote(mainViewModel.previousQuote())
+        if(mainViewModel.index <=0){
+            Toast.makeText(this, "No more Quotes", Toast.LENGTH_SHORT).show()
+        }else{
+            setQuote(mainViewModel.previousQuote())
+        }
     }
     fun onNext(view: View) {
-        setQuote(mainViewModel.nextQuote())
+        if(mainViewModel.index >=15){
+            Toast.makeText(this, "No more Quotes", Toast.LENGTH_SHORT).show()
+        }else{
+            setQuote(mainViewModel.nextQuote())
+        }
 
     }
     fun onShare(view: View) {

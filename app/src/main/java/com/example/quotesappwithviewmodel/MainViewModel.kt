@@ -8,7 +8,7 @@ import java.nio.charset.Charset
 class MainViewModel(val context: Context): ViewModel() {
 
     private var quoteList: Array<Quote> = emptyArray()
-    private var index = 0
+    var index = 0
 
     init {
         quoteList = loadQuotesFromAssets()
